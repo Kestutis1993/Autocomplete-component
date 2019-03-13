@@ -19,6 +19,18 @@
   color: white;
 }
 
+.list li, input {
+  list-style-type: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+.list p, ul {
+  margin: 0
+}
+.list div {
+  padding: 10px;
+}
+
 .App-link {
   color: #61dafb;
 }
