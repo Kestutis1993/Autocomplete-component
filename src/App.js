@@ -17,8 +17,9 @@ class App extends Component {
     fetch(urlString).then(response => 
       response.json())
       .then(data => {
-        initialMovies = data.results.map((movie) => {
-        return movie
+        console.log(data);
+        initialMovies = data.results.map((movie) => {          
+          return movie;
       });
         this.setState({
           movies: initialMovies
