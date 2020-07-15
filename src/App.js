@@ -18,8 +18,11 @@ class App extends Component {
       response.json())
       .then(data => {
         console.log(data);
-        initialMovies = data.results.map((movie) => {          
-          return movie;
+        initialMovies = data.results.map((movie) => {
+          console.log(initialMovies);
+          console.log(movie);
+        return movie;
+        
       });
         this.setState({
           movies: initialMovies
