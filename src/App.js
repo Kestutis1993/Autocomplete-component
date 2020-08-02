@@ -7,7 +7,7 @@ class App extends Component {
     this.state = {
       movies: [],
       text: '',
-      // matches: []
+      searchResults: false
     }
   }
 
@@ -17,75 +17,93 @@ class App extends Component {
       response.json())
       .then(data => {
         console.log(data);
-        // initialMovies = data.results.map((movie) => {
-        //   console.log(initialMovies);
-        //   console.log(movie);
-        // return movie;
         this.setState({
-          movies: data.results.slice(0,8)
+          movies: data.results.slice(0,8),
+          searchResults: true
         });
       });
   }
   
   searchChangeHandler(event){
     const searchTerm = event.target.value;
-    // let matches = [];
     this.setState({
       movies: [], 
       text: searchTerm}, () => {
       if (searchTerm.length >= 3) {
-        this.componentDidMount(searchTerm); 
+        this.componentDidMount(searchTerm);
+      } else if (searchTerm.length >= 1) {
+        this.setState({searchResults: true})
       } else {
         this.setState({
           movies: []
         })
-      }
+      } 
     });
   }
 
   selectedSuggestion(value){
     this.setState({
         text: value,
-        movies: []
+        movies: [],
+        searchResults: false
     });
   }
-  // renderSuggestions(){
-  //     const {movies} = this.state;
-  //     if (movies.length === 0){
-  //         return null;  
-  //     } 
-  // }
 
-  render() {
-    const {movies} = this.state;
-    return (
-      <div className="header">
-        <form style={{padding: '25px 25px 15px'}}>
-          <div style={{display: 'inline'}}>
-            <div className="textbox">
-              <i className="fas fa-film fa-lg" />
-              <input value={this.state.text} 
-                onChange={this.searchChangeHandler.bind(this)}
-                placeholder="Enter movie name"
-              />
-            </div>
-            <div className="searchbox">
-              <div className="square"><i className="fas fa-search fa-2x"></i></div>
-            </div>
+  handelSearchResults() {
+    const {movies, searchResults} = this.state;
+    if (searchResults) {  
+      return <div>
+        <div className="results_box">
+          <i className="fas fa-film fa-lg" />
+          <div className="input_box">
+            <input value={this.state.text} 
+              onChange={this.searchChangeHandler.bind(this)}
+            />
+            <p className="plcholder">Enter a movie name</p>
           </div>
-           
-          <div> 
-            <ul className="list">
-              {movies.map(movie =>
+        </div>
+        <div className="movies_box">
+          <ul className="list">
+            {movies.map((movie, index) =>
+              <div key={index}>
                 <div key={movie.id}>
                   <li onClick={() => this.selectedSuggestion(movie.title)}>{movie.title}</li>
                   <p>{movie.vote_average} Rating, {movie.release_date}</p>
                 </div>
-              )}
-            </ul>   
-            {/* {this.renderSuggestions()} */}
-          </div>
-        </form>
+              </div>
+            )}
+          </ul>
+        </div>
+      </div>
+    } else {
+      return null;
+    }
+  }
+
+  render() {
+    return (
+      <div className="main_bckg">
+        <div className="header">
+          <form>
+            <div>
+              <div className="text_box">
+                <i className="fas fa-film fa-lg" />
+                <input value={this.state.text} 
+                  onChange={this.searchChangeHandler.bind(this)}
+                  onClick={() => this.setState({searchResults: false})}
+                  placeholder="Enter movie name"
+                />
+              </div>
+              <div className="search_box">
+                <div className="square"><i className="fas fa-search fa-2x"></i></div>
+              </div>
+            </div>       
+            <div>
+              {this.handelSearchResults()}
+            </div>
+          </form>
+        </div>
+        <div className="body_block"></div>
       </div>
     );
   }

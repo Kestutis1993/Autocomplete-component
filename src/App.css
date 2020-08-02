@@ -1,5 +1,32 @@
 #root {
-  width: 60%;
+  background-color: lightblue;
+}
+
+.body_block {
+  background-color: white;
+  height: 600px;
+  margin: 0 auto;
+  width: 92%;
+}
+
+.fa-film {  
+  color: white;
+  padding: 14px;
+}
+
+form {
+  padding: 25px 25px 15px;
+}
+
+.header {
+  background: linear-gradient(90deg, rgba(254,97,0,1) 0%, rgba(252,88,0,1) 30%, rgba(252,54,0,1) 85%, rgba(227,45,0,1) 100%);
+  width: 92%;
+  height: 96px;
+  margin: 0 auto;
+}
+
+.input_box {
+  display: inline-block;
 }
 
 .list li, input {
@@ -12,13 +39,25 @@
   font-size: 14px;
 }
 .list div {
-  padding: 10px;
+  padding: 4px;
 }
 
-.header {
-  background: linear-gradient(90deg, rgba(254,97,0,1) 0%, rgba(252,88,0,1) 30%, rgba(252,54,0,1) 85%, rgba(227,45,0,1) 100%);
-  width: 700px;
-  height: 96px;
+.list {
+  padding: 0;
+  margin-left: 48px;
+  background-color: white;
+}
+
+.main_bckg {
+  width: 100%;
+  background-image: url("Sky-Wallpapers-Free-Download-Photo.jpg");
+}
+
+.movies_box {
+  position: relative;
+  border: 1px solid rgba(164, 164, 164, 0.5);
+  background-color: white;
+  margin-left: 48px;
 }
 
 ::placeholder {
@@ -26,42 +65,43 @@
   background: none;
 }
 
-.textbox {
-  overflow: hidden;
-  padding: 14px 0;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  display: inline;
-  margin-right: 5px;
-  background-color: rgba(255, 255, 255, 0.3);
+.plcholder {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  color: grey;
+  position: absolute;
 }
 
-.textbox input {
-  color: white;
+.results_box .fa-lg {
+  color: black;
+}
+
+.results_box {
+  overflow: hidden;
+  padding: 6px 0;
+  background-color: white;
+  margin-left: 48px;
+  margin-top: -55px;
+  position: relative;
+}
+
+.results_box input {
+  color: black;
   width: 500px;
   font-size: 14px;
   border: none;
   outline: none;
   background: none;
   position: relative;
+  top: -4px;
 }
 
-.fa-film {  
-  color: white;
-  padding: 14px;
-}
-
-/* .textbox i {
-  float: left;
-  padding: 15.6px 12px;
-  font-size: 20px;
-  color: white;
-} */
-
-.searchbox {
+.search_box {
   display: inline-block;
 }
 
-.searchbox i {
+.search_box i {
   position: absolute;
   top: 20px;
   background-color: white;
@@ -74,18 +114,17 @@
   border-radius: 1px;
 }
 
-.resultsbox {
+.text_box {
   overflow: hidden;
   padding: 14px 0;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   display: inline;
   margin-right: 5px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.resultsbox input {
+.text_box input {
   color: white;
-  width: 500px;
+  width: 92%;
   font-size: 14px;
   border: none;
   outline: none;
