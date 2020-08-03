@@ -39,7 +39,7 @@ form {
   font-size: 14px;
 }
 .list div {
-  padding: 4px;
+  padding: 4px 0;
 }
 
 .list {
@@ -88,7 +88,6 @@ form {
 
 .results_box input {
   color: black;
-  width: 500px;
   font-size: 14px;
   border: none;
   outline: none;
@@ -97,11 +96,11 @@ form {
   top: -4px;
 }
 
-.search_box {
+.search_logo {
   display: inline-block;
 }
 
-.search_box i {
+.search_logo i {
   position: absolute;
   top: 20px;
   background-color: white;
@@ -131,3 +130,155 @@ form {
   background: none;
   position: relative;
 }
+
+/* RESPONSIVE */
+
+@media only screen and (min-width: 1280px) {
+  .search_block {
+    width: 98%;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .header, .body_block {
+    width: 84%;
+  }
+
+  .main_bckg {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 1280px) and (min-width: 992px) {
+  form {
+    padding: 25px 20px 15px;
+  }
+
+  .search_block {
+    width: 96%;
+  }
+}
+
+@media only screen and (max-width: 1250px) and (min-width: 1150px) {
+  .search_block {
+    width: 94%;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .search_block {
+    width: 92%;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 320px) {
+  form {
+    padding: 25px 15px 15px;
+  }
+
+  .results_box .fa-lg {
+    padding: 13px;
+  }
+
+  .square .fa-2x {
+    padding: 6px;
+    top: 25px;
+  }
+
+  .text_box {
+    width: 100%;
+    display: inline-flex;
+    padding: 0;
+  }
+
+  
+}
+
+@media only screen and (max-width: 800px) {
+  .header, .body_block {
+    width: 84%;
+  }
+
+  .search_block {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .search_block {
+    width: 84%;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  form {
+    padding: 25px 15px 15px;
+  }
+  .search_block {
+    width: 80%;
+  }
+
+  .text_box .fa-lg {
+    padding: 12px;
+  }
+
+  .square .fa-2x {
+    padding: 4px;
+    top: 25px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 440px) {
+
+  .results_box {
+    padding: 3px 0;
+    margin-top: -50px;
+  }
+
+  .results_block {
+    margin-left: -4px;
+  }
+
+  .input_box {
+    width: 60%;
+  }
+
+  .results_box input {
+    font-size: 12px;
+  }
+
+  .list {
+    margin-left: 42px;
+  }
+
+  .list div {
+    padding: 2px;
+  }
+
+  .list li {
+    font-size: 14px;
+  }
+
+  .list p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  form {
+    padding: 25px 10px 15px;
+  }
+  .search_block {
+    width: 78%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .search_block {
+    width: 76%;
+  }
+}
+
+
+

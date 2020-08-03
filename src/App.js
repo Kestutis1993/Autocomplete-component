@@ -52,7 +52,7 @@ class App extends Component {
   handelSearchResults() {
     const {movies, searchResults} = this.state;
     if (searchResults) {  
-      return <div>
+      return <div className="results_block">
         <div className="results_box">
           <i className="fas fa-film fa-lg" />
           <div className="input_box">
@@ -85,7 +85,7 @@ class App extends Component {
       <div className="main_bckg">
         <div className="header">
           <form>
-            <div>
+            <div className="search_block">
               <div className="text_box">
                 <i className="fas fa-film fa-lg" />
                 <input value={this.state.text} 
@@ -94,7 +94,7 @@ class App extends Component {
                   placeholder="Enter movie name"
                 />
               </div>
-              <div className="search_box">
+              <div className="search_logo">
                 <div className="square"><i className="fas fa-search fa-2x"></i></div>
               </div>
             </div>       
