@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faFilm} from '@fortawesome/free-solid-svg-icons';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
+import './autocomplete.css';
 
-class App extends Component {
+class AutoComplete extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -12,11 +15,10 @@ class App extends Component {
   }
 
   componentDidMount(searchTerm){
-    const urlString = "https://api.themoviedb.org/3/search/movie?api_key=6151647ec82570f6d554e7709c136a36&language=en-US&query=" + searchTerm + "&page=1&include_adult=false";
-    fetch(urlString).then(response => 
-      response.json())
+    const urlString = `${process.env.REACT_APP_MOVIEDB_API_URL}/3/search/movie?api_key=${process.env.REACT_APP_MOVIEDB_API_KEY}&language=en-US&query=${searchTerm}&page=1&include_adult=false`;
+    fetch(urlString)
+      .then(response => response.json())
       .then(data => {
-        console.log(data);
         this.setState({
           movies: data.results.slice(0,8),
           searchResults: true
@@ -28,7 +30,8 @@ class App extends Component {
     const searchTerm = event.target.value;
     this.setState({
       movies: [], 
-      text: searchTerm}, () => {
+      text: searchTerm
+    }, () => {
       if (searchTerm.length >= 3) {
         this.componentDidMount(searchTerm);
       } else if (searchTerm.length >= 1) {
@@ -49,22 +52,22 @@ class App extends Component {
     });
   }
 
-  handelSearchResults() {
-    const {movies, searchResults} = this.state;
-    if (searchResults) {  
-      return <div className="results_block">
-        <div className="results_box">
-          <i className="fas fa-film fa-lg" />
-          <div className="input_box">
+  renderSearchResults() {
+    if (this.state.searchResults) {  
+      return <div className="results-block">
+        <div className="results-box">
+          <FontAwesomeIcon icon={faFilm} size="lg" className="film-icon" />
+          {/* <i className="fas fa-film fa-lg" /> */}
+          <div className="input-box">
             <input value={this.state.text} 
               onChange={this.searchChangeHandler.bind(this)}
             />
-            <p className="plcholder">Enter a movie name</p>
+            <p className="placeholder">Enter a movie name</p>
           </div>
         </div>
-        <div className="movies_box">
+        <div className="movies-box">
           <ul className="list">
-            {movies.map((movie, index) =>
+            {this.state.movies.map((movie, index) =>
               <div key={index}>
                 <div key={movie.id}>
                   <li onClick={() => this.selectedSuggestion(movie.title)}>{movie.title}</li>
@@ -82,31 +85,35 @@ class App extends Component {
 
   render() {
     return (
-      <div className="main_bckg">
+      <div className="main-background">
         <div className="header">
           <form>
-            <div className="search_block">
-              <div className="text_box">
-                <i className="fas fa-film fa-lg" />
+            <div className="search-block">
+              <div className="text-box">
+                {/* <i className="fas fa-film fa-lg" /> */}
+                <FontAwesomeIcon icon={faFilm} size="lg" className="fa-film" />
                 <input value={this.state.text} 
                   onChange={this.searchChangeHandler.bind(this)}
                   onClick={() => this.setState({searchResults: false})}
                   placeholder="Enter movie name"
                 />
               </div>
-              <div className="search_logo">
-                <div className="square"><i className="fas fa-search fa-2x"></i></div>
+              <div className="search-logo">
+                <div className="square">
+                  <FontAwesomeIcon icon={faSearch} size="2x" className="search-icon" />
+                </div>
               </div>
             </div>       
             <div>
-              {this.handelSearchResults()}
+              {this.renderSearchResults()}
             </div>
           </form>
+          
         </div>
-        <div className="body_block"></div>
+        <div className="body-block"></div>
       </div>
     );
   }
 }
 
-export default App;
+export default AutoComplete;

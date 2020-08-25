@@ -1,0 +1,293 @@
+#root {
+    background-color: lightblue;
+  }
+  
+  .body-block {
+    background-color: white;
+    height: 600px;
+    margin: 0 auto;
+    width: 92%;
+  }
+  
+  .fa-film {  
+    color: white;
+    padding: 14px;
+  }
+  
+  form {
+    padding: 25px 25px 15px;
+  }
+  
+  .header {
+    background: linear-gradient(90deg, rgba(254,97,0,1) 0%, rgba(252,88,0,1) 30%, rgba(252,54,0,1) 85%, rgba(227,45,0,1) 100%);
+    width: 92%;
+    height: 96px;
+    margin: 0 auto;
+  }
+  
+  .input-box {
+    display: inline-block;
+  }
+  
+  .list li, input {
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .list p, ul {
+    margin: 0;
+    font-size: 14px;
+  }
+  .list div {
+    padding: 4px 0;
+  }
+  
+  .list {
+    padding: 0;
+    margin-left: 48px;
+    background-color: white;
+  }
+  
+  .main-background {
+    width: 100%;
+    background-image: url("../../assets/Sky-Wallpapers-Free-Download-Photo.jpg");
+  }
+  
+  .movies-box {
+    position: relative;
+    border: 1px solid rgba(164, 164, 164, 0.5);
+    background-color: white;
+    margin-left: 48px;
+  }
+  
+  ::placeholder {
+    color: white;
+    background: none;
+  }
+  
+  .placeholder {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    color: grey;
+  }
+  
+  .results-box .film-icon {
+    color: black;
+  }
+  
+  .results-box {
+    overflow: hidden;
+    padding: 4px 0;
+    background-color: white;
+    margin-left: 48px;
+    margin-top: -44px;
+    position: relative;
+  }
+  
+  .results-box input {
+    color: black;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background: none;
+    position: relative;
+    top: -4px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 22px;
+    background-color: white;
+    padding: 9.6px;
+    color: orange;
+  }
+  
+  .search-logo {
+    display: inline-block;
+  }
+  
+  .square {
+    background-color: white;
+    border-radius: 1px;
+  }
+  
+  .text-box {
+    overflow: hidden;
+    padding: 14px 0;
+    display: inline;
+    margin-right: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .text-box input {
+    color: white;
+    width: 92%;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background: none;
+    position: relative;
+  }
+  
+  .text-box .fa-film {
+    margin-bottom: -14px;
+  }
+  
+  @media only screen and (min-width: 1280px) {
+    .search-block {
+      width: 98%;
+    }
+  }
+  
+  @media only screen and (max-width: 1280px) {
+    .header, .body-block {
+      width: 84%;
+    }
+  
+    .main-background {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+  
+  @media only screen and (max-width: 1280px) and (min-width: 992px) {
+    form {
+      padding: 25px 20px 15px;
+    }
+  
+    .search-block {
+      width: 96%;
+    }
+  }
+  
+  @media only screen and (max-width: 1250px) and (min-width: 1150px) {
+    .search-block {
+      width: 94%;
+    }
+  }
+  
+  @media only screen and (max-width: 1150px) {
+    .search-block {
+      width: 92%;
+    }
+  }
+  
+  @media only screen and (max-width: 992px) and (min-width: 320px) {
+    form {
+      padding: 25px 15px 15px;
+    }
+
+    .results-box {
+      margin-top: -64px;
+    }
+  
+    .results-box .film-icon {
+      padding: 13px;
+    }
+  
+    .square .search-icon {
+      padding: 6px;
+      top: 25px;
+    }
+  
+    .text-box {
+      width: 100%;
+      display: inline-flex;
+      padding: 0;
+    }
+    
+    .text-box .fa-film {
+      margin-bottom: -4px;
+    }
+    
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .header, .body-block {
+      width: 84%;
+    }
+  
+    .search-block {
+      width: 90%;
+    }
+  }
+  
+  @media only screen and (max-width: 650px) {
+    .search-block {
+      width: 84%;
+    }
+  }
+  
+  @media only screen and (max-width: 440px) {
+    form {
+      padding: 25px 15px 15px;
+    }
+    .search-block {
+      width: 80%;
+    }
+  
+    .text-box .fa-film {
+      padding: 12px;
+    }
+  
+    .square .search-icon {
+      padding: 4px;
+      top: 25px;
+    }
+  }
+  
+  @media only screen and (min-width: 320px) and (max-width: 440px) {
+  
+    .results-box {
+      padding: 3px 0;
+      margin-top: -62px;
+    }
+  
+    .results-block {
+      margin-left: -4px;
+    }
+  
+    .input-box {
+      width: 60%;
+    }
+  
+    .results-box input {
+      font-size: 12px;
+    }
+  
+    .list {
+      margin-left: 42px;
+    }
+  
+    .list div {
+      padding: 2px;
+    }
+  
+    .list li {
+      font-size: 14px;
+    }
+  
+    .list p {
+      font-size: 12px;
+    }
+  }
+  
+  @media only screen and (max-width: 350px) {
+    form {
+      padding: 25px 10px 15px;
+    }
+    .search-block {
+      width: 78%;
+    }
+  }
+  
+  @media only screen and (max-width: 320px) {
+    .search-block {
+      width: 76%;
+    }
+  }
+  
+  
+  
+  
