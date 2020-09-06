@@ -57,7 +57,6 @@ class AutoComplete extends Component {
       return <div className="results-block">
         <div className="results-box">
           <FontAwesomeIcon icon={faFilm} size="lg" className="film-icon" />
-          {/* <i className="fas fa-film fa-lg" /> */}
           <div className="input-box">
             <input value={this.state.text} 
               onChange={this.searchChangeHandler.bind(this)}
@@ -90,7 +89,6 @@ class AutoComplete extends Component {
           <form>
             <div className="search-block">
               <div className="text-box">
-                {/* <i className="fas fa-film fa-lg" /> */}
                 <FontAwesomeIcon icon={faFilm} size="lg" className="fa-film" />
                 <input value={this.state.text} 
                   onChange={this.searchChangeHandler.bind(this)}
